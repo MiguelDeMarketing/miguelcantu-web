@@ -4,6 +4,7 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { DecorativeChart } from "@/components/DecorativeChart";
 import { BackgroundPattern } from "@/components/BackgroundPattern";
 import { FloatingParticles } from "@/components/FloatingParticles";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { FadeIn } from "@/components/FadeIn";
 
 const services = [
@@ -61,8 +62,8 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative bg-surface overflow-hidden">
+        <AnimatedBackground variant="scanner" />
         <FloatingParticles count={25} />
-        <BackgroundPattern variant="dots" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
           <FadeIn>
             <span className="section-badge">Consultor en Transformacion Digital e Inteligencia Artificial</span>
@@ -124,8 +125,8 @@ export default function Home() {
 
       {/* Services */}
       <section className="relative px-6 py-20 overflow-hidden">
+        <AnimatedBackground variant="mesh" />
         <FloatingParticles count={15} color="primary" />
-        <BackgroundPattern variant="grid" />
         <div className="relative mx-auto max-w-[1200px]">
           <FadeIn>
             <div className="text-center mb-14">
@@ -226,7 +227,7 @@ export default function Home() {
 
       {/* CTA - Different visual from footer */}
       <section className="relative px-6 py-24 overflow-hidden">
-        <BackgroundPattern variant="lines" />
+        <AnimatedBackground variant="scanner" />
         <FloatingParticles count={18} />
         <div className="relative mx-auto max-w-[800px] text-center">
           <FadeIn>

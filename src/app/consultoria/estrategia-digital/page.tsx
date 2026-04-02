@@ -5,7 +5,9 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ServiceProcess } from "@/components/ServiceProcess";
 import { StrategyVisual } from "@/components/StrategyVisual";
 import { BackgroundPattern } from "@/components/BackgroundPattern";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { FadeIn } from "@/components/FadeIn";
+import { ImpactCalculator } from "@/components/demos/ImpactCalculator";
 
 export const metadata: Metadata = {
   title: "Consultor en Estrategia Digital — Alineacion de Tecnologia y Negocio",
@@ -53,7 +55,7 @@ export default function EstrategiaDigital() {
 
       {/* Intro with strategy radar */}
       <section className="relative px-6 py-20 overflow-hidden">
-        <BackgroundPattern variant="grid" />
+        <AnimatedBackground variant="scanner" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <FadeIn>
             <span className="section-badge">Estrategia Digital</span>
@@ -119,6 +121,25 @@ export default function EstrategiaDigital() {
             </div>
           </FadeIn>
           <ServiceProcess steps={process} />
+        </div>
+      </section>
+
+      {/* Interactive Demo */}
+      <section className="relative px-6 py-20 overflow-hidden">
+        <AnimatedBackground variant="mesh" />
+        <div className="relative mx-auto max-w-[1200px]">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <span className="section-badge">Demo Interactivo</span>
+              <h2>Calculadora de Impacto Digital</h2>
+              <p className="mt-4 mx-auto max-w-lg text-text-muted">
+                Selecciona tu industria y tamano de empresa para ver tu benchmark digital vs el mercado.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <ImpactCalculator />
+          </FadeIn>
         </div>
       </section>
 

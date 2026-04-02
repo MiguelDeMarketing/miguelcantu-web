@@ -5,7 +5,9 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ServiceProcess } from "@/components/ServiceProcess";
 import { NeuralNetwork } from "@/components/NeuralNetwork";
 import { BackgroundPattern } from "@/components/BackgroundPattern";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { FadeIn } from "@/components/FadeIn";
+import { MaturityAssessment } from "@/components/demos/MaturityAssessment";
 
 export const metadata: Metadata = {
   title: "Consultor en Transformacion Digital — Estrategia y Hoja de Ruta",
@@ -56,7 +58,7 @@ export default function TransformacionDigital() {
 
       {/* Intro with neural network */}
       <section className="relative px-6 py-20 overflow-hidden">
-        <BackgroundPattern variant="dots" />
+        <AnimatedBackground variant="mesh" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <FadeIn>
             <span className="section-badge">Transformacion Digital</span>
@@ -120,6 +122,25 @@ export default function TransformacionDigital() {
             </div>
           </FadeIn>
           <ServiceProcess steps={process} />
+        </div>
+      </section>
+
+      {/* Interactive Demo */}
+      <section className="relative px-6 py-20 overflow-hidden">
+        <AnimatedBackground variant="scanner" />
+        <div className="relative mx-auto max-w-[1200px]">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <span className="section-badge">Demo Interactivo</span>
+              <h2>Evalua tu Madurez Digital</h2>
+              <p className="mt-4 mx-auto max-w-lg text-text-muted">
+                Responde 6 preguntas rapidas y descubre en que nivel de transformacion digital se encuentra tu empresa.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <MaturityAssessment />
+          </FadeIn>
         </div>
       </section>
 

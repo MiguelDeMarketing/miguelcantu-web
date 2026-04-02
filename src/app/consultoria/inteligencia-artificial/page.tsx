@@ -5,7 +5,9 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ServiceProcess } from "@/components/ServiceProcess";
 import { NeuralNetwork } from "@/components/NeuralNetwork";
 import { BackgroundPattern } from "@/components/BackgroundPattern";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { FadeIn } from "@/components/FadeIn";
+import { RFMDemo } from "@/components/demos/RFMDemo";
 
 export const metadata: Metadata = {
   title: "Consultor en Inteligencia Artificial — IA para Empresas",
@@ -63,7 +65,7 @@ export default function InteligenciaArtificial() {
 
       {/* Intro with AI network */}
       <section className="relative px-6 py-20 overflow-hidden">
-        <BackgroundPattern variant="dots" />
+        <AnimatedBackground variant="mesh" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <FadeIn>
             <span className="section-badge">Inteligencia Artificial</span>
@@ -135,6 +137,25 @@ export default function InteligenciaArtificial() {
             </div>
           </FadeIn>
           <ServiceProcess steps={process} />
+        </div>
+      </section>
+
+      {/* Interactive Demo */}
+      <section className="relative px-6 py-20 overflow-hidden">
+        <AnimatedBackground variant="scanner" />
+        <div className="relative mx-auto max-w-[1200px]">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <span className="section-badge">Demo Interactivo</span>
+              <h2>Segmentacion RFM con Inteligencia Artificial</h2>
+              <p className="mt-4 mx-auto max-w-lg text-text-muted">
+                Observa como la IA segmenta clientes automaticamente por Recencia, Frecuencia y Valor Monetario.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <RFMDemo />
+          </FadeIn>
         </div>
       </section>
 

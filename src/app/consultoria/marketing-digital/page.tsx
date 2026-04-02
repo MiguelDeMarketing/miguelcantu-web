@@ -5,7 +5,9 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ServiceProcess } from "@/components/ServiceProcess";
 import { DecorativeChart } from "@/components/DecorativeChart";
 import { BackgroundPattern } from "@/components/BackgroundPattern";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { FadeIn } from "@/components/FadeIn";
+import { FunnelDemo } from "@/components/demos/FunnelDemo";
 
 export const metadata: Metadata = {
   title: "Consultor en Marketing Digital — Estrategia, SEO, Campanas y Contenido",
@@ -45,7 +47,7 @@ export default function MarketingDigital() {
 
       {/* Intro */}
       <section className="relative px-6 py-20 overflow-hidden">
-        <BackgroundPattern variant="dots" />
+        <AnimatedBackground variant="scanner" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <FadeIn>
             <span className="section-badge">Marketing Digital</span>
@@ -118,6 +120,25 @@ export default function MarketingDigital() {
             </div>
           </FadeIn>
           <ServiceProcess steps={process} />
+        </div>
+      </section>
+
+      {/* Interactive Demo */}
+      <section className="relative px-6 py-20 overflow-hidden">
+        <AnimatedBackground variant="mesh" />
+        <div className="relative mx-auto max-w-[1200px]">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <span className="section-badge">Demo Interactivo</span>
+              <h2>Simula tu Funnel de Conversion</h2>
+              <p className="mt-4 mx-auto max-w-lg text-text-muted">
+                Mueve los sliders y observa como pequeños cambios en tu estrategia generan gran impacto en revenue.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <FunnelDemo />
+          </FadeIn>
         </div>
       </section>
 
