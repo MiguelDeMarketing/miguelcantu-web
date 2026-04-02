@@ -1,0 +1,138 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, Compass, LineChart, Lightbulb, Puzzle, Gauge, Globe } from "lucide-react";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { ServiceProcess } from "@/components/ServiceProcess";
+import { DecorativeChart } from "@/components/DecorativeChart";
+import { BackgroundPattern } from "@/components/BackgroundPattern";
+import { FadeIn } from "@/components/FadeIn";
+
+export const metadata: Metadata = {
+  title: "Consultor en Estrategia Digital — Alineacion de Tecnologia y Negocio",
+  description:
+    "Miguel Cantu es consultor en estrategia digital. Alinea tecnologia, procesos y personas para maximizar el impacto digital en tu negocio.",
+};
+
+const capabilities = [
+  { icon: Compass, title: "Vision Digital", description: "Definicion del norte digital de tu empresa alineado a la estrategia de negocio." },
+  { icon: LineChart, title: "Modelo de Datos", description: "Arquitectura de datos y analitica para tomar decisiones informadas." },
+  { icon: Lightbulb, title: "Innovacion Digital", description: "Identificacion de oportunidades de innovacion y diferenciacion digital." },
+  { icon: Puzzle, title: "Integracion de Canales", description: "Estrategia omnicanal que conecta todos los puntos de contacto digitales." },
+  { icon: Gauge, title: "Performance Digital", description: "KPIs, dashboards y mecanismos de medicion para cada iniciativa." },
+  { icon: Globe, title: "Presencia Digital", description: "Estrategia de web, SEO, redes sociales y ecosistema digital completo." },
+];
+
+const process = [
+  { number: "01", title: "Descubrimiento", description: "Entendimiento profundo de tu negocio, mercado y capacidades digitales actuales." },
+  { number: "02", title: "Analisis", description: "Benchmarking, gaps, oportunidades y priorizacion de iniciativas." },
+  { number: "03", title: "Estrategia", description: "Plan integral con vision, objetivos, iniciativas y metricas de exito." },
+  { number: "04", title: "Activacion", description: "Implementacion por fases con acompanamiento y medicion continua." },
+];
+
+export default function EstrategiaDigital() {
+  return (
+    <>
+      <div className="page-header">
+        <h1>Consultor en Estrategia Digital</h1>
+        <p className="breadcrumb">
+          <Link href="/">Home</Link>
+          <span className="mx-2">/</span>
+          <Link href="/">Consultoria</Link>
+          <span className="mx-2">/</span>
+          <span>Estrategia Digital</span>
+        </p>
+      </div>
+
+      {/* Intro */}
+      <section className="relative px-6 py-20 overflow-hidden">
+        <BackgroundPattern variant="grid" />
+        <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
+          <FadeIn>
+            <span className="section-badge">Estrategia Digital</span>
+            <h2 className="mb-6">Estrategia Digital que Conecta Tecnologia con Negocio</h2>
+            <p className="mb-6 text-text-muted leading-relaxed">
+              La mayoria de las empresas tienen herramientas digitales. Pocas
+              tienen una estrategia digital. Como consultor en estrategia
+              digital, ayudo a alinear tecnologia, procesos y personas para que
+              cada inversion digital tenga impacto real.
+            </p>
+            <Link href="/contacto" className="btn btn-primary">
+              Disenar mi Estrategia <ArrowRight size={16} />
+            </Link>
+          </FadeIn>
+          <FadeIn delay={0.2} direction="right">
+            <div className="bg-surface p-6 border border-border">
+              <p className="text-xs text-text-muted uppercase tracking-wider mb-4">Madurez digital de clientes</p>
+              <DecorativeChart />
+              <div className="flex justify-between mt-4 text-xs text-text-muted">
+                <span>Antes</span>
+                <span>6 meses</span>
+                <span>12 meses</span>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="bg-primary px-6 py-12">
+        <div className="mx-auto grid max-w-[1200px] grid-cols-3 gap-8">
+          <AnimatedCounter end={40} suffix="+" label="Estrategias disenadas" />
+          <AnimatedCounter end={7} suffix="+" label="Anos de experiencia" />
+          <AnimatedCounter end={7} suffix="+" label="Certificaciones digitales" />
+        </div>
+      </section>
+
+      {/* Capabilities */}
+      <section className="px-6 py-20">
+        <div className="mx-auto max-w-[1200px]">
+          <FadeIn>
+            <div className="text-center mb-14">
+              <span className="section-badge">Alcance</span>
+              <h2>Lo que Incluye mi Consultoria en Estrategia Digital</h2>
+            </div>
+          </FadeIn>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {capabilities.map((c, i) => (
+              <FadeIn key={c.title} delay={i * 0.08}>
+                <div className="card-hover h-full">
+                  <c.icon size={28} className="mb-4 text-accent" strokeWidth={1.5} />
+                  <h3 className="mb-2 text-base font-semibold">{c.title}</h3>
+                  <p className="text-sm text-text-muted leading-relaxed">{c.description}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="bg-surface px-6 py-20">
+        <div className="mx-auto max-w-[1200px]">
+          <FadeIn>
+            <div className="text-center mb-14">
+              <span className="section-badge">Metodologia</span>
+              <h2>Mi Proceso de Estrategia Digital</h2>
+            </div>
+          </FadeIn>
+          <ServiceProcess steps={process} />
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 py-20">
+        <div className="mx-auto max-w-[1200px] bg-primary px-8 py-16 text-center">
+          <FadeIn>
+            <h2 className="mb-4 text-white">¿Tu empresa tiene estrategia digital?</h2>
+            <p className="mx-auto mb-8 max-w-lg text-white/60">
+              Agenda una consulta y definamos juntos la estrategia digital que tu negocio necesita.
+            </p>
+            <Link href="/contacto" className="btn btn-white">
+              Agendar Consulta <ArrowRight size={16} />
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+    </>
+  );
+}
