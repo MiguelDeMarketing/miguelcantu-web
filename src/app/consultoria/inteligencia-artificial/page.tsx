@@ -65,7 +65,7 @@ export default function InteligenciaArtificial() {
 
       {/* Intro with AI network */}
       <section className="relative px-6 py-20 overflow-hidden">
-        <AnimatedBackground variant="mesh" />
+        <AnimatedBackground variant="waves" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <FadeIn>
             <span className="section-badge">Inteligencia Artificial</span>
@@ -88,19 +88,38 @@ export default function InteligenciaArtificial() {
       </section>
 
       {/* AI Models ribbon */}
-      <section className="bg-primary px-6 py-8">
+      <section className="bg-primary px-6 py-10">
         <div className="mx-auto max-w-[1200px]">
-          <p className="text-center text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">
-            Modelos de IA que Implementamos
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.15em] text-white/40 mb-6">
+            Algunos de los Modelos de IA que mas Usamos
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 md:justify-between">
+          <div className="flex flex-wrap items-center justify-center gap-10 md:justify-between">
             {aiModels.map((m) => (
               <div key={m.name} className="text-center">
-                <p className="text-lg font-heading font-bold text-white">{m.name}</p>
-                <p className="text-xs text-white/50">{m.description}</p>
+                <p className="text-xl font-heading font-bold text-white">{m.name}</p>
+                <p className="text-xs text-white/50 mt-1">{m.description}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Interactive Demo */}
+      <section className="relative px-6 py-20 overflow-hidden">
+        <AnimatedBackground variant="grid" />
+        <div className="relative mx-auto max-w-[1200px]">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <span className="section-badge">Demo Interactivo</span>
+              <h2>Segmentacion RFM con Inteligencia Artificial</h2>
+              <p className="mt-4 mx-auto max-w-lg text-text-muted">
+                Observa como la IA segmenta clientes automaticamente por Recencia, Frecuencia y Valor Monetario.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <RFMDemo />
+          </FadeIn>
         </div>
       </section>
 
@@ -137,25 +156,6 @@ export default function InteligenciaArtificial() {
             </div>
           </FadeIn>
           <ServiceProcess steps={process} />
-        </div>
-      </section>
-
-      {/* Interactive Demo */}
-      <section className="relative px-6 py-20 overflow-hidden">
-        <AnimatedBackground variant="scanner" />
-        <div className="relative mx-auto max-w-[1200px]">
-          <FadeIn>
-            <div className="text-center mb-10">
-              <span className="section-badge">Demo Interactivo</span>
-              <h2>Segmentacion RFM con Inteligencia Artificial</h2>
-              <p className="mt-4 mx-auto max-w-lg text-text-muted">
-                Observa como la IA segmenta clientes automaticamente por Recencia, Frecuencia y Valor Monetario.
-              </p>
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <RFMDemo />
-          </FadeIn>
         </div>
       </section>
 

@@ -62,7 +62,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative bg-surface overflow-hidden">
-        <AnimatedBackground variant="scanner" />
+        <AnimatedBackground variant="grid" />
         <FloatingParticles count={25} />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
           <FadeIn>
@@ -125,7 +125,7 @@ export default function Home() {
 
       {/* Services */}
       <section className="relative px-6 py-20 overflow-hidden">
-        <AnimatedBackground variant="mesh" />
+        <AnimatedBackground variant="waves" />
         <FloatingParticles count={15} color="primary" />
         <div className="relative mx-auto max-w-[1200px]">
           <FadeIn>
@@ -227,7 +227,7 @@ export default function Home() {
 
       {/* CTA - Different visual from footer */}
       <section className="relative px-6 py-24 overflow-hidden">
-        <AnimatedBackground variant="scanner" />
+        <AnimatedBackground variant="grid" />
         <FloatingParticles count={18} />
         <div className="relative mx-auto max-w-[800px] text-center">
           <FadeIn>

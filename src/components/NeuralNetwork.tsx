@@ -83,16 +83,17 @@ export function NeuralNetwork({ centerLabel, nodes }: Props) {
             <circle
               cx={node.x}
               cy={node.y}
-              r={10}
+              r={28}
               fill="var(--color-surface)"
               stroke="var(--color-accent)"
-              strokeWidth={2}
+              strokeWidth={1.5}
             />
             <text
               x={node.x}
-              y={node.y + 26}
+              y={node.y + 1}
               textAnchor="middle"
-              fontSize={11}
+              dominantBaseline="middle"
+              fontSize={9}
               fontWeight={600}
               fill="var(--color-primary)"
               style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}
@@ -126,21 +127,32 @@ export function NeuralNetwork({ centerLabel, nodes }: Props) {
           animate={isInView ? { scale: 1 } : {}}
           transition={{ duration: 0.5, type: "spring" }}
         />
-        <motion.text
-          x={cx}
-          y={cy + 1}
-          textAnchor="middle"
-          dominantBaseline="middle"
-          fontSize={12}
-          fontWeight={700}
-          fill="#FFFFFF"
-          style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}
+        <motion.g
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.3, delay: 0.5 }}
         >
-          {centerLabel}
-        </motion.text>
+          {centerLabel.includes(" ") ? (
+            <>
+              <text x={cx} y={cy - 6} textAnchor="middle" dominantBaseline="middle"
+                fontSize={10} fontWeight={700} fill="#FFFFFF"
+                style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}>
+                {centerLabel.split(" ")[0]}
+              </text>
+              <text x={cx} y={cy + 8} textAnchor="middle" dominantBaseline="middle"
+                fontSize={10} fontWeight={700} fill="#FFFFFF"
+                style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}>
+                {centerLabel.split(" ").slice(1).join(" ")}
+              </text>
+            </>
+          ) : (
+            <text x={cx} y={cy + 1} textAnchor="middle" dominantBaseline="middle"
+              fontSize={12} fontWeight={700} fill="#FFFFFF"
+              style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}>
+              {centerLabel}
+            </text>
+          )}
+        </motion.g>
       </svg>
     </div>
   );

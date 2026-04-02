@@ -55,7 +55,7 @@ export default function EstrategiaDigital() {
 
       {/* Intro with strategy radar */}
       <section className="relative px-6 py-20 overflow-hidden">
-        <AnimatedBackground variant="scanner" />
+        <AnimatedBackground variant="grid" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <FadeIn>
             <span className="section-badge">Estrategia Digital</span>
@@ -76,15 +76,31 @@ export default function EstrategiaDigital() {
         </div>
       </section>
 
-      {/* Certifications ribbon */}
+      {/* Ribbon */}
       <section className="bg-primary px-6 py-8">
         <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-center gap-8 md:justify-between">
-          {certRibbon.map((c) => (
-            <div key={c.text} className="flex items-center gap-2">
-              <c.icon size={16} className="text-accent" strokeWidth={1.5} />
-              <span className="text-xs font-medium text-white/80">{c.text}</span>
-            </div>
+          {["Incremento de Visibilidad", "Posicionamiento de Marca", "Reconocimiento", "Autoridad"].map((s) => (
+            <span key={s} className="text-sm font-semibold text-white/80">{s}</span>
           ))}
+        </div>
+      </section>
+
+      {/* Interactive Demo */}
+      <section className="relative px-6 py-20 overflow-hidden">
+        <AnimatedBackground variant="waves" />
+        <div className="relative mx-auto max-w-[1200px]">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <span className="section-badge">Demo Interactivo</span>
+              <h2>Calculadora de Impacto Digital</h2>
+              <p className="mt-4 mx-auto max-w-lg text-text-muted">
+                Selecciona tu industria y tamano de empresa para ver tu benchmark digital vs el mercado.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <ImpactCalculator />
+          </FadeIn>
         </div>
       </section>
 
@@ -121,25 +137,6 @@ export default function EstrategiaDigital() {
             </div>
           </FadeIn>
           <ServiceProcess steps={process} />
-        </div>
-      </section>
-
-      {/* Interactive Demo */}
-      <section className="relative px-6 py-20 overflow-hidden">
-        <AnimatedBackground variant="mesh" />
-        <div className="relative mx-auto max-w-[1200px]">
-          <FadeIn>
-            <div className="text-center mb-10">
-              <span className="section-badge">Demo Interactivo</span>
-              <h2>Calculadora de Impacto Digital</h2>
-              <p className="mt-4 mx-auto max-w-lg text-text-muted">
-                Selecciona tu industria y tamano de empresa para ver tu benchmark digital vs el mercado.
-              </p>
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <ImpactCalculator />
-          </FadeIn>
         </div>
       </section>
 

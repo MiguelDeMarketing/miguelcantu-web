@@ -47,7 +47,7 @@ export default function MarketingDigital() {
 
       {/* Intro */}
       <section className="relative px-6 py-20 overflow-hidden">
-        <AnimatedBackground variant="scanner" />
+        <AnimatedBackground variant="grid" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <FadeIn>
             <span className="section-badge">Marketing Digital</span>
@@ -78,12 +78,31 @@ export default function MarketingDigital() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-primary px-6 py-12">
-        <div className="mx-auto grid max-w-[1200px] grid-cols-3 gap-8">
-          <AnimatedCounter end={40} suffix="+" label="Empresas asesoradas" />
-          <AnimatedCounter end={7} suffix="+" label="Anos en marketing digital" />
-          <AnimatedCounter end={50} suffix="+" label="Campanas gestionadas" />
+      {/* Ribbon */}
+      <section className="bg-primary px-6 py-8">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-center gap-8 md:justify-between">
+          {["SEO", "SEM / PPC", "Analitica", "Sitio Web", "Redes Sociales"].map((s) => (
+            <span key={s} className="text-sm font-semibold text-white/80">{s}</span>
+          ))}
+        </div>
+      </section>
+
+      {/* Interactive Demo */}
+      <section className="relative px-6 py-20 overflow-hidden">
+        <AnimatedBackground variant="waves" />
+        <div className="relative mx-auto max-w-[1200px]">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <span className="section-badge">Demo Interactivo</span>
+              <h2>Simula tu Funnel de Conversion</h2>
+              <p className="mt-4 mx-auto max-w-lg text-text-muted">
+                Mueve los sliders y observa como pequeños cambios en tu estrategia generan gran impacto en revenue.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <FunnelDemo />
+          </FadeIn>
         </div>
       </section>
 
@@ -120,25 +139,6 @@ export default function MarketingDigital() {
             </div>
           </FadeIn>
           <ServiceProcess steps={process} />
-        </div>
-      </section>
-
-      {/* Interactive Demo */}
-      <section className="relative px-6 py-20 overflow-hidden">
-        <AnimatedBackground variant="mesh" />
-        <div className="relative mx-auto max-w-[1200px]">
-          <FadeIn>
-            <div className="text-center mb-10">
-              <span className="section-badge">Demo Interactivo</span>
-              <h2>Simula tu Funnel de Conversion</h2>
-              <p className="mt-4 mx-auto max-w-lg text-text-muted">
-                Mueve los sliders y observa como pequeños cambios en tu estrategia generan gran impacto en revenue.
-              </p>
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <FunnelDemo />
-          </FadeIn>
         </div>
       </section>
 

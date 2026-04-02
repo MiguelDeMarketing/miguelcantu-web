@@ -87,29 +87,32 @@ export function StrategyVisual() {
           transition={{ duration: 0.8, delay: 0.5 }}
         />
 
-        {/* Pillar labels */}
+        {/* Pillar nodes with labels inside */}
         {pillars.map((p, i) => {
           const rad = (p.angle * Math.PI) / 180;
-          const lx = cx + 185 * Math.cos(rad);
-          const ly = cy + 185 * Math.sin(rad);
+          const nx = cx + 160 * Math.cos(rad);
+          const ny = cy + 160 * Math.sin(rad);
           return (
             <motion.g
               key={`label-${i}`}
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
             >
               <circle
-                cx={cx + 160 * Math.cos(rad)}
-                cy={cy + 160 * Math.sin(rad)}
-                r={5}
-                fill="var(--color-accent)"
+                cx={nx}
+                cy={ny}
+                r={28}
+                fill="var(--color-surface)"
+                stroke="var(--color-accent)"
+                strokeWidth={1.5}
               />
               <text
-                x={lx}
-                y={ly + 4}
+                x={nx}
+                y={ny + 1}
                 textAnchor="middle"
-                fontSize={11}
+                dominantBaseline="middle"
+                fontSize={9}
                 fontWeight={600}
                 fill="var(--color-primary)"
                 style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}

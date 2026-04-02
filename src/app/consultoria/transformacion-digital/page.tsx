@@ -58,7 +58,7 @@ export default function TransformacionDigital() {
 
       {/* Intro with neural network */}
       <section className="relative px-6 py-20 overflow-hidden">
-        <AnimatedBackground variant="mesh" />
+        <AnimatedBackground variant="waves" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <FadeIn>
             <span className="section-badge">Transformacion Digital</span>
@@ -80,12 +80,31 @@ export default function TransformacionDigital() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-primary px-6 py-12">
-        <div className="mx-auto grid max-w-[1200px] grid-cols-3 gap-8">
-          <AnimatedCounter end={40} suffix="+" label="Empresas transformadas" />
-          <AnimatedCounter end={2} label="Maestrias" />
-          <AnimatedCounter end={1} label="Micromaster (Boston U)" />
+      {/* Ribbon */}
+      <section className="bg-primary px-6 py-8">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-center gap-8 md:justify-between">
+          {["Tecnologia", "Personas", "Procesos", "Digitalizacion"].map((s) => (
+            <span key={s} className="text-sm font-semibold text-white/80">{s}</span>
+          ))}
+        </div>
+      </section>
+
+      {/* Interactive Demo */}
+      <section className="relative px-6 py-20 overflow-hidden">
+        <AnimatedBackground variant="grid" />
+        <div className="relative mx-auto max-w-[1200px]">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <span className="section-badge">Demo Interactivo</span>
+              <h2>Evalua tu Madurez Digital</h2>
+              <p className="mt-4 mx-auto max-w-lg text-text-muted">
+                Responde 6 preguntas rapidas y descubre en que nivel de transformacion digital se encuentra tu empresa.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <MaturityAssessment />
+          </FadeIn>
         </div>
       </section>
 
@@ -122,25 +141,6 @@ export default function TransformacionDigital() {
             </div>
           </FadeIn>
           <ServiceProcess steps={process} />
-        </div>
-      </section>
-
-      {/* Interactive Demo */}
-      <section className="relative px-6 py-20 overflow-hidden">
-        <AnimatedBackground variant="scanner" />
-        <div className="relative mx-auto max-w-[1200px]">
-          <FadeIn>
-            <div className="text-center mb-10">
-              <span className="section-badge">Demo Interactivo</span>
-              <h2>Evalua tu Madurez Digital</h2>
-              <p className="mt-4 mx-auto max-w-lg text-text-muted">
-                Responde 6 preguntas rapidas y descubre en que nivel de transformacion digital se encuentra tu empresa.
-              </p>
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <MaturityAssessment />
-          </FadeIn>
         </div>
       </section>
 
