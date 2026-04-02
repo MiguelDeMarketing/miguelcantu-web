@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Compass, LineChart, Lightbulb, Puzzle, Gauge, Globe } from "lucide-react";
+import { ArrowRight, Compass, LineChart, Lightbulb, Puzzle, Gauge, Globe, Award, BookOpen, GraduationCap } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ServiceProcess } from "@/components/ServiceProcess";
-import { DecorativeChart } from "@/components/DecorativeChart";
+import { StrategyVisual } from "@/components/StrategyVisual";
 import { BackgroundPattern } from "@/components/BackgroundPattern";
 import { FadeIn } from "@/components/FadeIn";
 
@@ -29,6 +29,14 @@ const process = [
   { number: "04", title: "Activacion", description: "Implementacion por fases con acompanamiento y medicion continua." },
 ];
 
+const certRibbon = [
+  { icon: GraduationCap, text: "MBA Transformacion Digital — IEBS" },
+  { icon: GraduationCap, text: "Maestria Analitica — EGADE" },
+  { icon: Globe, text: "Micromaster — Boston University" },
+  { icon: Award, text: "Estrategia Conectada — Wharton" },
+  { icon: BookOpen, text: "7+ Certificaciones Digitales" },
+];
+
 export default function EstrategiaDigital() {
   return (
     <>
@@ -43,7 +51,7 @@ export default function EstrategiaDigital() {
         </p>
       </div>
 
-      {/* Intro */}
+      {/* Intro with strategy radar */}
       <section className="relative px-6 py-20 overflow-hidden">
         <BackgroundPattern variant="grid" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
@@ -61,25 +69,20 @@ export default function EstrategiaDigital() {
             </Link>
           </FadeIn>
           <FadeIn delay={0.2} direction="right">
-            <div className="bg-surface p-6 border border-border">
-              <p className="text-xs text-text-muted uppercase tracking-wider mb-4">Madurez digital de clientes</p>
-              <DecorativeChart />
-              <div className="flex justify-between mt-4 text-xs text-text-muted">
-                <span>Antes</span>
-                <span>6 meses</span>
-                <span>12 meses</span>
-              </div>
-            </div>
+            <StrategyVisual />
           </FadeIn>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-primary px-6 py-12">
-        <div className="mx-auto grid max-w-[1200px] grid-cols-3 gap-8">
-          <AnimatedCounter end={40} suffix="+" label="Estrategias disenadas" />
-          <AnimatedCounter end={7} suffix="+" label="Anos de experiencia" />
-          <AnimatedCounter end={7} suffix="+" label="Certificaciones digitales" />
+      {/* Certifications ribbon */}
+      <section className="bg-primary px-6 py-8">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-center gap-8 md:justify-between">
+          {certRibbon.map((c) => (
+            <div key={c.text} className="flex items-center gap-2">
+              <c.icon size={16} className="text-accent" strokeWidth={1.5} />
+              <span className="text-xs font-medium text-white/80">{c.text}</span>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -89,7 +92,7 @@ export default function EstrategiaDigital() {
           <FadeIn>
             <div className="text-center mb-14">
               <span className="section-badge">Alcance</span>
-              <h2>Lo que Incluye mi Consultoria en Estrategia Digital</h2>
+              <h2>Pilares de la Estrategia Digital</h2>
             </div>
           </FadeIn>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

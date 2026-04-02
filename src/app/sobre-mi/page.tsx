@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, GraduationCap, Award, BookOpen, CheckCircle } from "lucide-react";
+import { ArrowRight, GraduationCap, Award, BookOpen, CheckCircle, Globe } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { BackgroundPattern } from "@/components/BackgroundPattern";
 import { FadeIn } from "@/components/FadeIn";
@@ -8,41 +8,46 @@ import { FadeIn } from "@/components/FadeIn";
 export const metadata: Metadata = {
   title: "Sobre Mi — Miguel Cantu, Consultor en Transformacion Digital",
   description:
-    "Conoce a Miguel Cantu: consultor en marketing digital, transformacion digital e inteligencia artificial. 2 maestrias EGADE, Micromaster Boston University, profesor Tec de Monterrey.",
+    "Conoce a Miguel Cantu: consultor en marketing digital, transformacion digital e inteligencia artificial. MBA IEBS, Maestria EGADE, Micromaster Boston University, profesor Tec de Monterrey.",
 };
 
 const stats = [
   { end: 7, suffix: "+", label: "Anos de experiencia" },
   { end: 40, suffix: "+", label: "Empresas asesoradas" },
   { end: 50, suffix: "+", label: "Proyectos completados" },
-  { end: 2, suffix: "", label: "Maestrias EGADE" },
+  { end: 2, suffix: "", label: "Maestrias" },
 ];
 
 const education = [
   {
     icon: GraduationCap,
-    title: "Maestria en Transformacion Digital",
-    institution: "EGADE Business School — Tecnologico de Monterrey",
+    title: "MBA en Administracion de Empresas — Transformacion Digital",
+    institution: "Universidad IEBS, Espana",
   },
   {
     icon: GraduationCap,
-    title: "Maestria en Analitica de Datos",
+    title: "Maestria en Internet Business Analytics",
     institution: "EGADE Business School — Tecnologico de Monterrey",
   },
   {
-    icon: GraduationCap,
-    title: "Micromaster en Transformacion Digital",
-    institution: "Boston University",
+    icon: Globe,
+    title: "MicroMaster en Liderazgo Digital",
+    institution: "Universidad de Boston — Plataforma EdX",
   },
   {
     icon: Award,
-    title: "7+ Certificaciones en Analitica Digital",
-    institution: "Analitica Web, SEO, Marketing Digital y mas",
+    title: "Diplomado en Marketing Digital",
+    institution: "Universidad IEBS, Espana",
   },
   {
-    icon: BookOpen,
-    title: "Profesor de Catedra",
-    institution: "Tecnologico de Monterrey — Programas de carrera y educacion continua",
+    icon: Award,
+    title: "Certificacion en Estrategia Conectada",
+    institution: "Universidad de Wharton — Plataforma EdX",
+  },
+  {
+    icon: Award,
+    title: "7+ Certificaciones en Operativa Digital",
+    institution: "Diseno web, SEO, PPC, Analitica web y mas",
   },
 ];
 
@@ -81,10 +86,16 @@ const timeline = [
       "Consultoria AI-First en marketing digital, transformacion digital e inteligencia artificial para empresas medianas en Mexico.",
   },
   {
-    period: "2022 — Presente",
-    role: "Profesor de Catedra, Tec de Monterrey",
+    period: "Presente",
+    role: "Representante de Mexico — Foro Mundial de Angeles Inversionistas",
     description:
-      "Docente en programas de carrera y educacion continua del Tecnologico de Monterrey en temas de marketing digital y transformacion digital.",
+      "Miembro del comite de Ciencias, Tecnologia e Innovacion, atendiendo temas de Inclusion Digital y Tecnologias Emergentes.",
+  },
+  {
+    period: "2022 — Presente",
+    role: "Profesor de Catedra — Tecnologico de Monterrey",
+    description:
+      "Docente bajo el modelo TEC 21 en programas de carrera y educacion continua en temas de marketing digital y transformacion digital.",
   },
   {
     period: "2019 — 2024",
@@ -129,21 +140,22 @@ export default function SobreMi() {
             <span className="section-badge">Quien Soy</span>
             <h2 className="mb-6">Miguel Cantu</h2>
             <p className="mb-4 text-text-muted leading-relaxed">
-              Consultor en marketing digital, transformacion digital e
-              inteligencia artificial con sede en Monterrey, Mexico. Ayudo a
-              directores y equipos de liderazgo a tomar mejores decisiones
-              digitales.
+              Represento a Mexico en el Foro Mundial de Angeles Inversionistas,
+              donde formo parte del comite de Ciencias, Tecnologia e Innovacion
+              atendiendo temas de Inclusion Digital y Tecnologias Emergentes.
             </p>
             <p className="mb-4 text-text-muted leading-relaxed">
-              Con 2 maestrias por EGADE Business School, un Micromaster por
-              Boston University y mas de 7 certificaciones en analitica digital,
-              combino formacion de primer nivel con experiencia practica en mas
-              de 40 empresas.
+              Soy Profesor de catedra en el Tecnologico de Monterrey bajo el
+              modelo TEC 21, y consultor en marketing digital, transformacion
+              digital e inteligencia artificial para empresas que quieren crecer
+              con claridad y datos.
             </p>
             <p className="mb-8 text-text-muted leading-relaxed">
-              Tambien soy profesor de catedra en el Tecnologico de Monterrey,
-              donde enseno marketing digital y transformacion digital en
-              programas de carrera y educacion continua.
+              Con un MBA en Transformacion Digital por IEBS (Espana), Maestria
+              en Internet Business Analytics por EGADE, MicroMaster en Liderazgo
+              Digital por Boston University y certificacion en Estrategia
+              Conectada por Wharton, combino formacion de clase mundial con
+              experiencia practica en mas de 40 empresas.
             </p>
 
             <div className="grid grid-cols-2 gap-6 border-t border-border pt-8 sm:grid-cols-4">
@@ -155,7 +167,7 @@ export default function SobreMi() {
         </div>
       </section>
 
-      {/* Education & Credentials */}
+      {/* Education */}
       <section className="bg-surface px-6 py-20">
         <div className="mx-auto max-w-[1200px]">
           <FadeIn>
@@ -206,7 +218,7 @@ export default function SobreMi() {
         </div>
       </section>
 
-      {/* Authority navy */}
+      {/* Mission navy */}
       <section className="section-navy px-6 py-20">
         <div className="mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <FadeIn>
@@ -250,7 +262,7 @@ export default function SobreMi() {
           </FadeIn>
           <div className="space-y-0">
             {timeline.map((t, i) => (
-              <FadeIn key={t.period} delay={i * 0.1}>
+              <FadeIn key={t.role} delay={i * 0.1}>
                 <div className="relative flex gap-6 pb-10 last:pb-0">
                   <div className="flex flex-col items-center">
                     <div className="h-3 w-3 rounded-full bg-accent shrink-0 mt-1.5" />
@@ -269,18 +281,38 @@ export default function SobreMi() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-[1200px] bg-primary px-8 py-16 text-center">
-          <FadeIn>
-            <h2 className="mb-4 text-white">¿Trabajamos juntos?</h2>
-            <p className="mx-auto mb-8 max-w-lg text-white/60">
-              Si buscas un consultor en transformacion digital, marketing digital
-              o inteligencia artificial, hablemos.
-            </p>
-            <Link href="/contacto" className="btn btn-white">
-              Agendar Consulta <ArrowRight size={16} />
-            </Link>
-          </FadeIn>
+      <section className="relative overflow-hidden">
+        <div className="bg-primary">
+          <div className="mx-auto max-w-[1200px] grid items-center gap-12 px-6 py-20 md:grid-cols-2">
+            <FadeIn>
+              <h2 className="text-white mb-6">¿Trabajamos juntos?</h2>
+              <p className="text-white/60 mb-8 leading-relaxed">
+                Si buscas un consultor en transformacion digital, marketing digital
+                o inteligencia artificial con formacion certificada y experiencia
+                real, hablemos.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contacto" className="btn btn-white">
+                  Agendar Consulta <ArrowRight size={16} />
+                </Link>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.2} direction="right">
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { number: "7+", label: "Anos de experiencia" },
+                  { number: "40+", label: "Empresas asesoradas" },
+                  { number: "2", label: "Maestrias" },
+                  { number: "7+", label: "Certificaciones" },
+                ].map((s) => (
+                  <div key={s.label} className="bg-white/5 border border-white/10 p-6 text-center">
+                    <p className="font-heading text-3xl font-bold text-white">{s.number}</p>
+                    <p className="text-xs text-white/50 uppercase tracking-wider mt-1">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
     </>

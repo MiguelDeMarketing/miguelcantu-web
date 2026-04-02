@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, BarChart3, Target, TrendingUp, Brain, CheckCircle, GraduationCap, Award } from "lucide-react";
+import { ArrowRight, BarChart3, Target, TrendingUp, Brain, CheckCircle, GraduationCap, Award, BookOpen, Globe } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { DecorativeChart } from "@/components/DecorativeChart";
-import { RadialProgress } from "@/components/RadialProgress";
 import { BackgroundPattern } from "@/components/BackgroundPattern";
 import { FadeIn } from "@/components/FadeIn";
 
@@ -37,20 +36,23 @@ const services = [
   },
 ];
 
-const reasons = [
-  "Vision estrategica, no solo ejecucion tactica",
-  "2 maestrias por EGADE Business School",
-  "Micromaster en Transformacion Digital por Boston University",
-  "Mas de 7 certificaciones en analitica digital",
-  "Profesor de catedra en el Tecnologico de Monterrey",
-  "Experiencia con mas de 40 empresas en Mexico",
+const credentials = [
+  { icon: GraduationCap, title: "MBA Transformacion Digital", subtitle: "IEBS, Espana" },
+  { icon: GraduationCap, title: "Maestria Analitica", subtitle: "EGADE Business School" },
+  { icon: Globe, title: "Micromaster", subtitle: "Boston University" },
+  { icon: Award, title: "7+ Certificaciones", subtitle: "Analitica Digital" },
+  { icon: BookOpen, title: "Profesor de Catedra", subtitle: "Tec de Monterrey" },
 ];
 
-const credentials = [
-  { icon: GraduationCap, title: "2 Maestrias", subtitle: "EGADE Business School" },
-  { icon: GraduationCap, title: "Micromaster", subtitle: "Boston University" },
-  { icon: Award, title: "7+ Certificaciones", subtitle: "Analitica Digital" },
-  { icon: Award, title: "Profesor de Catedra", subtitle: "Tec de Monterrey" },
+const certifications = [
+  "MBA en Transformacion Digital — IEBS, Espana",
+  "Maestria en Internet Business Analytics — EGADE",
+  "Micromaster en Liderazgo Digital — Boston University (EdX)",
+  "Certificacion en Estrategia Conectada — Wharton (EdX)",
+  "Diplomado en Marketing Digital — IEBS",
+  "Mas de 7 certificaciones: SEO, PPC, Analitica Web, Diseno Web",
+  "Profesor de catedra — Tecnologico de Monterrey (modelo TEC 21)",
+  "Representante de Mexico — Foro Mundial de Angeles Inversionistas",
 ];
 
 export default function Home() {
@@ -64,7 +66,7 @@ export default function Home() {
             <span className="section-badge">Consultor en Transformacion Digital e Inteligencia Artificial</span>
             <h1 className="mb-4">Miguel Cantu</h1>
             <p className="mb-2 text-xl font-heading font-bold text-primary/80">
-              Consultoria Estrategica en Marketing Digital y Transformacion Digital
+              Consultoria en Marketing Digital, Estrategia Digital e IA
             </p>
             <p className="mb-8 max-w-lg text-base leading-relaxed text-text-muted">
               Ayudo a directores y C-suite a tomar mejores decisiones digitales.
@@ -103,13 +105,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats bar with animated counters */}
+      {/* Stats bar */}
       <section className="border-y border-border bg-surface">
         <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-8 px-6 py-12 md:grid-cols-4">
           <AnimatedCounter end={7} suffix="+" label="Anos de experiencia" />
           <AnimatedCounter end={40} suffix="+" label="Empresas asesoradas" />
           <AnimatedCounter end={50} suffix="+" label="Proyectos completados" />
-          <AnimatedCounter end={2} label="Maestrias EGADE" />
+          <AnimatedCounter end={2} label="Maestrias" />
         </div>
       </section>
 
@@ -159,32 +161,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Growth chart section */}
+      {/* Client growth chart */}
       <section className="bg-surface px-6 py-20">
         <div className="mx-auto max-w-[1200px]">
           <FadeIn>
             <div className="grid items-center gap-12 md:grid-cols-2">
               <div>
                 <span className="section-badge">Resultados</span>
-                <h2 className="mb-6">Crecimiento Basado en Estrategia y Datos</h2>
+                <h2 className="mb-6">Crecimiento en Adquisicion de Clientes</h2>
                 <p className="mb-6 text-text-muted leading-relaxed">
-                  Cada proyecto arranca con un diagnostico claro y termina con
-                  resultados medibles. No vendo humo — trabajo con KPIs reales
-                  desde el dia uno.
+                  Mis clientes ven resultados tangibles en los primeros meses.
+                  A traves de estrategias de marketing digital, SEO y campanas
+                  basadas en datos, aceleramos la adquisicion de clientes de
+                  forma sostenible.
                 </p>
-                <div className="flex gap-8">
-                  <RadialProgress value={50} label="Proyectos" sublabel="Completados" />
-                  <RadialProgress value={40} label="Empresas" sublabel="Asesoradas" />
-                  <RadialProgress value={7} label="Certificaciones" sublabel="Digitales" size={100} />
+                <div className="grid grid-cols-3 gap-6">
+                  <div>
+                    <p className="font-heading text-2xl font-bold text-primary">40+</p>
+                    <p className="text-xs text-text-muted uppercase tracking-wider">Empresas</p>
+                  </div>
+                  <div>
+                    <p className="font-heading text-2xl font-bold text-primary">50+</p>
+                    <p className="text-xs text-text-muted uppercase tracking-wider">Proyectos</p>
+                  </div>
+                  <div>
+                    <p className="font-heading text-2xl font-bold text-primary">7+</p>
+                    <p className="text-xs text-text-muted uppercase tracking-wider">Anos</p>
+                  </div>
                 </div>
               </div>
               <div className="bg-surface p-6 border border-border">
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-4">Impacto en clientes</p>
+                <p className="text-xs text-text-muted uppercase tracking-wider mb-4">Adquisicion de clientes — Crecimiento anual</p>
                 <DecorativeChart />
                 <div className="flex justify-between mt-4 text-xs text-text-muted">
-                  <span>Inicio</span>
-                  <span>6 meses</span>
-                  <span>12 meses</span>
+                  <span>Enero</span>
+                  <span>Junio</span>
+                  <span>Diciembre</span>
                 </div>
               </div>
             </div>
@@ -192,7 +204,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Authority section - Navy */}
+      {/* Certified knowledge section - Navy */}
       <section className="section-navy px-6 py-20">
         <div className="mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <FadeIn direction="left">
@@ -205,47 +217,67 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <span className="section-badge section-badge-white">Por Que Elegirme</span>
+            <span className="section-badge section-badge-white">Conocimiento Certificado</span>
             <h2 className="mb-6">
-              Estrategia Digital con Respaldo Academico y Experiencia Real
+              Formacion de Primer Nivel Aplicada a tu Negocio
             </h2>
             <p className="mb-8 text-white/60">
-              Combino formacion de primer nivel con experiencia practica en mas
-              de 40 empresas. No soy una agencia — soy un estratega que trabaja
-              codo a codo con tu equipo directivo.
+              Cada recomendacion que hago esta respaldada por formacion academica
+              de universidades de clase mundial y experiencia practica en el
+              mercado mexicano.
             </p>
-            <ul className="space-y-4">
-              {reasons.map((r) => (
-                <li key={r} className="flex items-start gap-3">
-                  <CheckCircle size={20} className="mt-0.5 shrink-0 text-accent" />
-                  <span className="text-sm text-white/80">{r}</span>
+            <ul className="space-y-3">
+              {certifications.map((c) => (
+                <li key={c} className="flex items-start gap-3">
+                  <CheckCircle size={18} className="mt-0.5 shrink-0 text-accent" />
+                  <span className="text-sm text-white/80">{c}</span>
                 </li>
               ))}
             </ul>
-            <Link href="/sobre-mi" className="btn btn-white mt-8">
-              Conoce Mi Trayectoria
-              <ArrowRight size={16} />
-            </Link>
           </FadeIn>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative px-6 py-20 overflow-hidden">
-        <BackgroundPattern variant="lines" />
-        <div className="relative mx-auto max-w-[1200px] bg-primary px-8 py-16 text-center">
-          <FadeIn>
-            <span className="section-badge section-badge-white">Siguiente Paso</span>
-            <h2 className="mb-4 text-white">¿Listo para transformar tu empresa?</h2>
-            <p className="mx-auto mb-8 max-w-lg text-white/60">
-              Agenda una consulta sin compromiso. Hablemos de donde esta tu
-              empresa y a donde quieres llevarla.
-            </p>
-            <Link href="/contacto" className="btn btn-white">
-              Agendar Consulta
-              <ArrowRight size={16} />
-            </Link>
-          </FadeIn>
+      {/* CTA - Full width redesign */}
+      <section className="relative overflow-hidden">
+        <div className="bg-primary">
+          <div className="mx-auto max-w-[1200px] grid items-center gap-12 px-6 py-20 md:grid-cols-2">
+            <FadeIn>
+              <span className="section-badge section-badge-white">Siguiente Paso</span>
+              <h2 className="text-white mb-6">
+                ¿Listo para Transformar tu Empresa?
+              </h2>
+              <p className="text-white/60 mb-8 leading-relaxed">
+                Agenda una consulta sin compromiso. Hablemos de donde esta tu
+                empresa hoy y disenemos juntos la estrategia digital que
+                necesitas para llegar a donde quieres.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contacto" className="btn btn-white">
+                  Agendar Consulta
+                  <ArrowRight size={16} />
+                </Link>
+                <Link href="/sobre-mi" className="btn border-2 border-white/30 text-white hover:bg-white/10">
+                  Conoce Mi Trayectoria
+                </Link>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.2} direction="right">
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { number: "7+", label: "Anos de experiencia" },
+                  { number: "40+", label: "Empresas asesoradas" },
+                  { number: "50+", label: "Proyectos completados" },
+                  { number: "2", label: "Maestrias" },
+                ].map((s) => (
+                  <div key={s.label} className="bg-white/5 border border-white/10 p-6 text-center">
+                    <p className="font-heading text-3xl font-bold text-white">{s.number}</p>
+                    <p className="text-xs text-white/50 uppercase tracking-wider mt-1">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
     </>

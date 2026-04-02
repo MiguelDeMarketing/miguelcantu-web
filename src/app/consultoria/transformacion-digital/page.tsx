@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Layers, Users, Cpu, GitBranch, Shield, Workflow } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ServiceProcess } from "@/components/ServiceProcess";
-import { RadialProgress } from "@/components/RadialProgress";
+import { NeuralNetwork } from "@/components/NeuralNetwork";
 import { BackgroundPattern } from "@/components/BackgroundPattern";
 import { FadeIn } from "@/components/FadeIn";
 
@@ -29,6 +29,17 @@ const process = [
   { number: "04", title: "Acompanamiento", description: "Seguimiento, ajustes y aseguramiento de la adopcion." },
 ];
 
+const networkNodes = [
+  "Ventas",
+  "Marketing",
+  "Operaciones",
+  "Finanzas",
+  "RRHH",
+  "TI",
+  "Clientes",
+  "Datos",
+];
+
 export default function TransformacionDigital() {
   return (
     <>
@@ -43,7 +54,7 @@ export default function TransformacionDigital() {
         </p>
       </div>
 
-      {/* Intro */}
+      {/* Intro with neural network */}
       <section className="relative px-6 py-20 overflow-hidden">
         <BackgroundPattern variant="dots" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
@@ -52,7 +63,7 @@ export default function TransformacionDigital() {
             <h2 className="mb-6">La Transformacion Digital No Es un Proyecto de TI</h2>
             <p className="mb-6 text-text-muted leading-relaxed">
               Es una decision de negocio. Como consultor en transformacion
-              digital con Maestria en Transformacion Digital por EGADE y
+              digital con MBA en Transformacion Digital por IEBS y
               Micromaster por Boston University, ayudo a empresas a disenar su
               estrategia de transformacion con vision de negocio, no de
               tecnologia.
@@ -62,11 +73,7 @@ export default function TransformacionDigital() {
             </Link>
           </FadeIn>
           <FadeIn delay={0.2} direction="right">
-            <div className="flex flex-wrap justify-center gap-6">
-              <RadialProgress value={40} label="Empresas" sublabel="Transformadas" />
-              <RadialProgress value={50} label="Proyectos" sublabel="Completados" />
-              <RadialProgress value={7} label="Anos" sublabel="De experiencia" size={100} />
-            </div>
+            <NeuralNetwork centerLabel="CORE DIGITAL" nodes={networkNodes} />
           </FadeIn>
         </div>
       </section>
@@ -75,7 +82,7 @@ export default function TransformacionDigital() {
       <section className="bg-primary px-6 py-12">
         <div className="mx-auto grid max-w-[1200px] grid-cols-3 gap-8">
           <AnimatedCounter end={40} suffix="+" label="Empresas transformadas" />
-          <AnimatedCounter end={2} label="Maestrias (EGADE)" />
+          <AnimatedCounter end={2} label="Maestrias" />
           <AnimatedCounter end={1} label="Micromaster (Boston U)" />
         </div>
       </section>
@@ -85,8 +92,8 @@ export default function TransformacionDigital() {
         <div className="mx-auto max-w-[1200px]">
           <FadeIn>
             <div className="text-center mb-14">
-              <span className="section-badge">Alcance</span>
-              <h2>Lo que Incluye mi Consultoria en Transformacion Digital</h2>
+              <span className="section-badge">Hoja de Ruta</span>
+              <h2>Alcance del Proyecto de Transformacion Digital</h2>
             </div>
           </FadeIn>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -122,7 +129,7 @@ export default function TransformacionDigital() {
           <FadeIn>
             <h2 className="mb-4 text-white">¿Listo para iniciar tu transformacion digital?</h2>
             <p className="mx-auto mb-8 max-w-lg text-white/60">
-              Agenda un assessment gratuito y descubre donde esta tu empresa en su camino de transformacion.
+              Agenda un assessment y descubre donde esta tu empresa en su camino de transformacion.
             </p>
             <Link href="/contacto" className="btn btn-white">
               Agendar Assessment <ArrowRight size={16} />

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Brain, Bot, Database, Zap, MessageSquare, Eye } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ServiceProcess } from "@/components/ServiceProcess";
-import { RadialProgress } from "@/components/RadialProgress";
+import { NeuralNetwork } from "@/components/NeuralNetwork";
 import { BackgroundPattern } from "@/components/BackgroundPattern";
 import { FadeIn } from "@/components/FadeIn";
 
@@ -29,6 +29,24 @@ const process = [
   { number: "04", title: "Escalamiento", description: "Expansion a otros procesos y mejora continua del modelo." },
 ];
 
+const businessAreas = [
+  "Ventas",
+  "Marketing",
+  "Operaciones",
+  "Finanzas",
+  "Atencion",
+  "Logistica",
+  "RRHH",
+  "Producto",
+];
+
+const aiModels = [
+  { name: "Clusters", description: "Segmentacion automatica de clientes" },
+  { name: "RFM", description: "Recencia, Frecuencia, Monetario" },
+  { name: "ARIMA", description: "Prediccion de series de tiempo" },
+  { name: "NLP", description: "Procesamiento de lenguaje natural" },
+];
+
 export default function InteligenciaArtificial() {
   return (
     <>
@@ -43,7 +61,7 @@ export default function InteligenciaArtificial() {
         </p>
       </div>
 
-      {/* Intro */}
+      {/* Intro with AI network */}
       <section className="relative px-6 py-20 overflow-hidden">
         <BackgroundPattern variant="dots" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
@@ -62,20 +80,25 @@ export default function InteligenciaArtificial() {
             </Link>
           </FadeIn>
           <FadeIn delay={0.2} direction="right">
-            <div className="flex flex-wrap justify-center gap-6">
-              <RadialProgress value={40} label="Empresas" sublabel="Con IA implementada" />
-              <RadialProgress value={50} label="Proyectos" sublabel="De IA completados" />
-            </div>
+            <NeuralNetwork centerLabel="IA" nodes={businessAreas} />
           </FadeIn>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-primary px-6 py-12">
-        <div className="mx-auto grid max-w-[1200px] grid-cols-3 gap-8">
-          <AnimatedCounter end={40} suffix="+" label="Empresas con IA" />
-          <AnimatedCounter end={7} suffix="+" label="Anos en tecnologia" />
-          <AnimatedCounter end={7} suffix="+" label="Certificaciones" />
+      {/* AI Models ribbon */}
+      <section className="bg-primary px-6 py-8">
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">
+            Modelos de IA que Implementamos
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:justify-between">
+            {aiModels.map((m) => (
+              <div key={m.name} className="text-center">
+                <p className="text-lg font-heading font-bold text-white">{m.name}</p>
+                <p className="text-xs text-white/50">{m.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -85,7 +108,7 @@ export default function InteligenciaArtificial() {
           <FadeIn>
             <div className="text-center mb-14">
               <span className="section-badge">Capacidades</span>
-              <h2>Lo que Incluye mi Consultoria en Inteligencia Artificial</h2>
+              <h2>Soluciones de Inteligencia Artificial para tu Empresa</h2>
             </div>
           </FadeIn>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

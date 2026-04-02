@@ -64,7 +64,7 @@ export default function MarketingDigital() {
           </FadeIn>
           <FadeIn delay={0.2} direction="right">
             <div className="bg-surface p-6 border border-border">
-              <p className="text-xs text-text-muted uppercase tracking-wider mb-4">Crecimiento de clientes</p>
+              <p className="text-xs text-text-muted uppercase tracking-wider mb-4">Clientes adquiridos — Crecimiento anual</p>
               <DecorativeChart />
               <div className="flex justify-between mt-4 text-xs text-text-muted">
                 <span>Mes 1</span>
@@ -91,7 +91,7 @@ export default function MarketingDigital() {
           <FadeIn>
             <div className="text-center mb-14">
               <span className="section-badge">Servicios</span>
-              <h2>Lo que Incluye mi Consultoria en Marketing Digital</h2>
+              <h2>Alcance de la Consultoria en Marketing Digital</h2>
             </div>
           </FadeIn>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
