@@ -7,6 +7,11 @@ import html from "remark-html";
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
+export type Heading = {
+  id: string;
+  text: string;
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -16,6 +21,7 @@ export type BlogPost = {
   thumbnail: string;
   category: string;
   content: string;
+  headings: Heading[];
 };
 
 const CATEGORY_KEYWORDS: Record<string, string[]> = {
@@ -35,9 +41,22 @@ function inferCategory(slug: string, title: string): string {
   return "Negocio";
 }
 
-function markdownToHtml(markdown: string): string {
+function slugify(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+function markdownToHtml(markdown: string): { html: string; headings: Heading[] } {
   const result = remark().use(html, { sanitize: false }).processSync(markdown);
-  return result.toString();
+  let htmlStr = result.toString();
+
+  const headings: Heading[] = [];
+  htmlStr = htmlStr.replace(/<h2>(.*?)<\/h2>/g, (_, text) => {
+    const id = slugify(text.replace(/<[^>]*>/g, ""));
+    headings.push({ id, text: text.replace(/<[^>]*>/g, "") });
+    return `<h2 id="${id}">${text}</h2>`;
+  });
+
+  return { html: htmlStr, headings };
 }
 
 export function getBlogPosts(): BlogPost[] {
@@ -53,6 +72,8 @@ export function getBlogPosts(): BlogPost[] {
     const slug = file.replace(/\.mdx?$/, "");
     const title = data.title || "Sin titulo";
 
+    const rendered = markdownToHtml(content);
+
     return {
       slug,
       title,
@@ -65,7 +86,8 @@ export function getBlogPosts(): BlogPost[] {
       readingTime: stats.text.replace("read", "de lectura").replace("min", "min"),
       thumbnail: data.thumbnail || `/blog/${slug}.png`,
       category: data.category || inferCategory(slug, title),
-      content: markdownToHtml(content),
+      content: rendered.html,
+      headings: rendered.headings,
     };
   });
 
@@ -79,4 +101,19 @@ export function getBlogPosts(): BlogPost[] {
 export function getBlogPost(slug: string): BlogPost | null {
   const posts = getBlogPosts();
   return posts.find((p) => p.slug === slug) || null;
+}
+
+export function getRelatedPosts(slug: string, limit = 4): BlogPost[] {
+  const posts = getBlogPosts();
+  const current = posts.find((p) => p.slug === slug);
+  if (!current) return posts.slice(0, limit);
+
+  const sameCategory = posts.filter(
+    (p) => p.slug !== slug && p.category === current.category
+  );
+  const others = posts.filter(
+    (p) => p.slug !== slug && p.category !== current.category
+  );
+
+  return [...sameCategory, ...others].slice(0, limit);
 }

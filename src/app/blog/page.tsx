@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Blog() {
   const posts = getBlogPosts();
 
-  const postsForGrid = posts.map(({ content, ...rest }) => rest);
+  const postsForGrid = posts.map(({ content, headings, ...rest }) => rest);
 
   return (
     <>
