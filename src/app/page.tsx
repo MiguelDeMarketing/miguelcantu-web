@@ -89,7 +89,7 @@ export default function Home() {
 
           <FadeIn delay={0.2} direction="right">
             <div className="relative">
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-xl ring-1 ring-black/5">
                 <img
                   src="/miguel-hero.png"
                   alt="Miguel Cantu - Consultor de Transformacion Digital"
@@ -181,7 +181,7 @@ export default function Home() {
         <FloatingParticles count={12} color="accent" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <FadeIn direction="left">
-            <div className="aspect-[4/3] overflow-hidden rounded-lg">
+            <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-xl ring-1 ring-white/10">
               <img
                 src="/miguel-knowledge.png"
                 alt="Miguel Cantu en conferencia de consultoria"

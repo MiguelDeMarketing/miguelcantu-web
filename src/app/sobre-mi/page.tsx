@@ -128,7 +128,7 @@ export default function SobreMi() {
         <AnimatedBackground variant="grid" />
         <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <FadeIn>
-            <div className="aspect-[3/4] overflow-hidden">
+            <div className="aspect-[3/4] overflow-hidden rounded-lg shadow-xl ring-1 ring-black/5">
               <img
                 src="/miguel-portrait.png"
                 alt="Miguel Cantu - Retrato profesional"
@@ -242,7 +242,7 @@ export default function SobreMi() {
             </ul>
           </FadeIn>
           <FadeIn delay={0.2} direction="right">
-            <div className="aspect-video overflow-hidden rounded-lg">
+            <div className="aspect-video overflow-hidden rounded-lg shadow-xl ring-1 ring-black/5">
               <img
                 src="/miguel-mission.png"
                 alt="Miguel Cantu impartiendo clase"
