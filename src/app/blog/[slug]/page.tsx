@@ -54,7 +54,7 @@ export default async function BlogPost({ params }: Props) {
         </Link>
 
         {/* Header */}
-        <div className="mb-8 max-w-[700px]">
+        <div className="mb-8">
           <span className="text-xs font-semibold uppercase tracking-wider text-accent">
             {post.category}
           </span>
@@ -65,8 +65,8 @@ export default async function BlogPost({ params }: Props) {
           </p>
         </div>
 
-        {/* Thumbnail */}
-        <div className="mb-8 aspect-[16/9] max-w-[700px] overflow-hidden rounded-lg shadow-lg">
+        {/* Thumbnail - full width */}
+        <div className="mb-8 aspect-[21/9] overflow-hidden rounded-lg shadow-lg">
           <img
             src={post.thumbnail}
             alt={post.title}
@@ -74,8 +74,8 @@ export default async function BlogPost({ params }: Props) {
           />
         </div>
 
-        {/* Author bar */}
-        <div className="mb-12 flex max-w-[700px] items-center gap-4 border-b border-border pb-8">
+        {/* Author bar - full width */}
+        <div className="mb-12 flex items-center gap-4 border-b border-border pb-8">
           <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full shadow-md ring-2 ring-accent/20">
             <img
               src="/miguel-avatar.png"
