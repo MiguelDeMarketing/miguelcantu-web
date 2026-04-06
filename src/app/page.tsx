@@ -89,21 +89,15 @@ export default function Home() {
 
           <FadeIn delay={0.2} direction="right">
             <div className="relative">
-              <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-xl ring-1 ring-black/5">
+              <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-2xl ring-1 ring-black/10">
                 <img
                   src="/miguel-hero.png"
                   alt="Miguel Cantu - Consultor de Transformacion Digital"
                   className="h-full w-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-4 bg-surface p-5 shadow-lg border border-border">
-                <p className="font-heading text-3xl font-bold text-accent">7+</p>
-                <p className="text-xs text-text-muted uppercase tracking-wider">Anos de experiencia</p>
-              </div>
-              <div className="absolute -top-4 -right-4 bg-accent p-4 shadow-lg">
-                <p className="font-heading text-2xl font-bold text-white">40+</p>
-                <p className="text-xs text-white/80 uppercase tracking-wider">Empresas</p>
-              </div>
+              <div className="absolute -bottom-3 -left-3 h-20 w-20 rounded-lg bg-accent shadow-lg" />
+              <div className="absolute -top-3 -right-3 h-16 w-16 rounded-lg bg-primary/10 shadow-sm" />
             </div>
           </FadeIn>
         </div>

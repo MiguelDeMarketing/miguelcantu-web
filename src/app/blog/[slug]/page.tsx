@@ -129,7 +129,7 @@ export default async function BlogPost({ params }: Props) {
 
           {/* Main content */}
           <div className="min-w-0 max-w-[700px]">
-            <div className="prose prose-lg max-w-none text-text [&_a]:text-accent [&_a]:no-underline hover:[&_a]:underline [&_h2]:font-heading [&_h2]:text-primary [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:font-heading [&_h3]:text-primary [&_h3]:mt-8 [&_h3]:mb-3 [&_h4]:font-heading [&_h4]:text-primary [&_p]:mb-4 [&_p]:leading-relaxed [&_ul]:mb-4 [&_ol]:mb-4 [&_li]:mb-1 [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-text-muted [&_strong]:text-primary [&_img]:rounded-lg [&_img]:shadow-md">
+            <div className="prose prose-lg max-w-none text-text [&_a]:text-accent [&_a]:no-underline hover:[&_a]:underline [&_h2]:font-heading [&_h2]:text-primary [&_h2]:mt-16 [&_h2]:mb-6 [&_h2]:pt-8 [&_h2]:border-t [&_h2]:border-border [&_h3]:font-heading [&_h3]:text-primary [&_h3]:mt-10 [&_h3]:mb-4 [&_h4]:font-heading [&_h4]:text-primary [&_h4]:mt-8 [&_h4]:mb-3 [&_p]:mb-6 [&_p]:leading-[1.8] [&_ul]:mb-6 [&_ul]:mt-2 [&_ol]:mb-6 [&_ol]:mt-2 [&_li]:mb-2 [&_li]:leading-[1.7] [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:pl-6 [&_blockquote]:py-2 [&_blockquote]:my-8 [&_blockquote]:italic [&_blockquote]:text-text-muted [&_strong]:text-primary [&_img]:rounded-lg [&_img]:shadow-md [&_img]:my-8">
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
 
